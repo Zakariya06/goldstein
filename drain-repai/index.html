@@ -1792,7 +1792,7 @@
         aspect-ratio: 1334 / 1179;
         z-index: -3;
         pointer-events: none;
-        background: url("assets/drain-problems-technician.png") left bottom /
+        background: url("assets/drain-problems-technician.webp") left bottom /
           contain no-repeat;
         -webkit-mask-image:
           linear-gradient(
@@ -2253,7 +2253,7 @@
         right: 0;
         width: min(67%, 1160px);
         height: 100%;
-        background: url("assets/tough-jobs-property.png") center center / cover
+        background: url("assets/tough-jobs-property.webp") center center / cover
           no-repeat;
         -webkit-mask-image:
           linear-gradient(
@@ -2593,7 +2593,7 @@
         right: 0;
         width: min(66%, 1120px);
         height: min(72%, 610px);
-        background: url("assets/drain-work-property.png") center center / cover
+        background: url("assets/drain-work-property.webp") center center / cover
           no-repeat;
         -webkit-mask-image:
           linear-gradient(
@@ -2923,7 +2923,7 @@
         position: absolute;
         z-index: -2;
         inset: 0;
-        background: url("assets/property-services-background.png") center /
+        background: url("assets/property-services-background.webp") center /
           cover no-repeat;
         opacity: 0.9;
         -webkit-mask-image:
@@ -3292,7 +3292,7 @@
         right: 0;
         width: min(68%, 1140px);
         height: min(48%, 440px);
-        background: url("assets/crew-drain-background.png") right top / cover
+        background: url("assets/crew-drain-background.webp") right top / cover
           no-repeat;
         -webkit-mask-image:
           linear-gradient(180deg, #000 0%, #000 58%, transparent 100%),
@@ -4040,7 +4040,7 @@
         position: absolute;
         z-index: -2;
         inset: 0;
-        background-image: url("assets/faq-drain-house.png");
+        background-image: url("assets/faq-drain-house.webp");
         background-position: center 51%;
         background-size: cover;
       }
@@ -4320,7 +4320,7 @@
         position: absolute;
         z-index: -2;
         inset: 0;
-        background: url("assets/cta-drain-flow.png") center / cover no-repeat;
+        background: url("assets/cta-drain-flow.webp") center / cover no-repeat;
       }
 
       .drain-cta-section::after {
@@ -13321,7 +13321,131 @@
       }
     }
   </style>
-</head>
+
+    <style id="visit-workflow-alignment-fix">
+      /* Workflow-only alignment fix:
+         - SVG icon and title share one row
+         - copy stays vertically centered
+         - right image fills the card all the way to the right border */
+      #page-content .visit-workflow-step {
+        grid-template-columns: minmax(330px, 43%) minmax(0, 57%);
+        overflow: hidden;
+      }
+
+      #page-content .visit-workflow-step__copy {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 20px 30px 20px 20px;
+      }
+
+      #page-content .visit-workflow-step__heading {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        min-width: 0;
+      }
+
+      #page-content .visit-workflow-step__heading-text {
+        min-width: 0;
+      }
+
+      #page-content .visit-workflow-step__marker {
+        position: static;
+        top: auto;
+        left: auto;
+        flex: 0 0 42px;
+        width: 42px;
+        height: 42px;
+        margin: 0;
+        border-radius: 6px;
+        transform: none;
+      }
+
+      #page-content .visit-workflow-step__marker svg {
+        width: 24px;
+        height: 24px;
+      }
+
+      #page-content .visit-workflow-step__title {
+        margin: 0;
+      }
+
+      #page-content .visit-workflow-step__rule {
+        margin: 6px 0 0;
+      }
+
+      #page-content .visit-workflow-step__description {
+        max-width: 390px;
+        margin: 10px 0 0 60px;
+      }
+
+      #page-content .visit-workflow-step__media {
+        width: 100%;
+        max-width: none;
+        height: 100%;
+        min-height: 220px;
+        margin: 0;
+        align-self: stretch;
+        justify-self: stretch;
+        overflow: hidden;
+        clip-path: polygon(9% 0, 100% 0, 100% 100%, 0 100%);
+        border-radius: 0 7px 7px 0;
+      }
+
+      #page-content .visit-workflow-step__image {
+        display: block;
+        width: 100%;
+        max-width: none;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      @media (max-width: 1050px) {
+        #page-content .visit-workflow-step {
+          grid-template-columns: minmax(320px, 46%) minmax(0, 54%);
+        }
+
+        #page-content .visit-workflow-step__copy {
+          padding-right: 24px;
+        }
+      }
+
+      @media (max-width: 760px) {
+        #page-content .visit-workflow-step {
+          grid-template-columns: 1fr;
+          margin-left: 0;
+        }
+
+        #page-content .visit-workflow-step__copy {
+          padding: 18px 20px 20px;
+        }
+
+        #page-content .visit-workflow-step__heading {
+          gap: 14px;
+        }
+
+        #page-content .visit-workflow-step__description {
+          max-width: none;
+          margin-left: 56px;
+        }
+
+        #page-content .visit-workflow-step__media {
+          min-height: 190px;
+          margin: 0;
+          clip-path: none;
+          border-radius: 0 0 7px 7px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        #page-content .visit-workflow-step__description {
+          margin-left: 0;
+        }
+      }
+    </style>
+
+  </head>
   <body class="gpx-over">
     <!-- ======================= HEADER / TOPBAR / NAV ======================== -->
     <!-- Goldstein shared header: top bar + desktop nav + mobile drawer -->
@@ -13954,7 +14078,7 @@
         <div class="drain-repair-hero__media" aria-hidden="true">
           <img
             class="drain-repair-hero__image"
-            src="assets/hero-drain-repair-service-fixed.png"
+            src="assets/hero-drain-repair-service-fixed.webp"
             alt=""
             width="1672"
             height="941"
@@ -14463,7 +14587,7 @@
           <figure class="tough-jobs-section__detail tough-jobs-reveal">
             <img
               class="tough-jobs-section__detail-image"
-              src="assets/tough-jobs-damaged-pipe.png"
+              src="assets/tough-jobs-damaged-pipe.webp"
               alt="Damaged underground drain pipe filled with roots"
               width="1448"
               height="1086"
@@ -14536,7 +14660,7 @@
               <div class="drain-work-card__image-wrap">
                 <img
                   class="drain-work-card__image"
-                  src="assets/drain-work-clogged-sink.png"
+                  src="assets/drain-work-clogged-sink.webp"
                   alt="Clogged kitchen sink with standing water"
                   width="1448"
                   height="1086"
@@ -14559,7 +14683,7 @@
               <div class="drain-work-card__image-wrap">
                 <img
                   class="drain-work-card__image"
-                  src="assets/drain-work-pipework.png"
+                  src="assets/drain-work-pipework.webp"
                   alt="Exposed pipework beneath a floor"
                   width="1448"
                   height="1086"
@@ -14582,7 +14706,7 @@
               <div class="drain-work-card__image-wrap">
                 <img
                   class="drain-work-card__image"
-                  src="assets/drain-work-repair.png"
+                  src="assets/drain-work-repair.webp"
                   alt="Black drain line repair in a gravel trench"
                   width="1448"
                   height="1086"
@@ -14605,7 +14729,7 @@
               <div class="drain-work-card__image-wrap">
                 <img
                   class="drain-work-card__image"
-                  src="assets/drain-work-installation.png"
+                  src="assets/drain-work-installation.webp"
                   alt="New drainage pipes installed in a trench"
                   width="1448"
                   height="1086"
@@ -14693,7 +14817,7 @@
             <article class="property-services-card property-services-reveal">
               <img
                 class="property-services-card__image"
-                src="assets/property-services-house.png"
+                src="assets/property-services-house.webp"
                 alt="Modern detached house at dusk"
                 width="1448"
                 height="1086"
@@ -14722,7 +14846,7 @@
             <article class="property-services-card property-services-reveal">
               <img
                 class="property-services-card__image"
-                src="assets/property-services-apartments.png"
+                src="assets/property-services-apartments.webp"
                 alt="Contemporary apartment building with balconies"
                 width="1448"
                 height="1086"
@@ -14753,7 +14877,7 @@
             <article class="property-services-card property-services-reveal">
               <img
                 class="property-services-card__image"
-                src="assets/property-services-retail.png"
+                src="assets/property-services-retail.webp"
                 alt="Streetfront retail storefronts with awnings"
                 width="1448"
                 height="1086"
@@ -14784,7 +14908,7 @@
             <article class="property-services-card property-services-reveal">
               <img
                 class="property-services-card__image"
-                src="assets/property-services-commercial.png"
+                src="assets/property-services-commercial.webp"
                 alt="Commercial warehouse building with loading bays"
                 width="1448"
                 height="1086"
@@ -14856,7 +14980,7 @@
               class="crew-advantages-section__image crew-advantages-section__image--trained crew-reveal"
             >
               <img
-                src="assets/crew-camera-inspection.png"
+                src="assets/crew-camera-inspection.webp"
                 alt="Drain technician operating professional camera inspection equipment"
                 width="1448"
                 height="1086"
@@ -14902,7 +15026,7 @@
               class="crew-advantages-section__image crew-advantages-section__image--inspection crew-reveal"
             >
               <img
-                src="assets/crew-trained-technician.png"
+                src="assets/crew-trained-technician.webp"
                 alt="Technician inspecting and servicing drain pipework"
                 width="1448"
                 height="1086"
@@ -14970,7 +15094,7 @@
               class="crew-advantages-section__image crew-advantages-section__image--cause crew-reveal"
             >
               <img
-                src="assets/crew-root-cause.png"
+                src="assets/crew-root-cause.webp"
                 alt="Drain technician preparing professional drain cleaning equipment"
                 width="1448"
                 height="1086"
@@ -14983,7 +15107,7 @@
               class="crew-advantages-section__image crew-advantages-section__image--repair crew-reveal"
             >
               <img
-                src="assets/crew-finished-repair.png"
+                src="assets/crew-finished-repair.webp"
                 alt="Drain technician completing a clean kitchen sink repair"
                 width="1448"
                 height="1086"
@@ -15073,7 +15197,9 @@
             <article
               class="visit-workflow-step visit-workflow-step--arrival visit-workflow-reveal"
             >
-              <div class="visit-workflow-step__marker" aria-hidden="true">
+              <div class="visit-workflow-step__copy">
+                <div class="visit-workflow-step__heading">
+                  <div class="visit-workflow-step__marker" aria-hidden="true">
                 <svg
                   viewBox="0 0 48 48"
                   fill="none"
@@ -15088,14 +15214,16 @@
                   <circle cx="24" cy="20" r="4.8"></circle>
                 </svg>
               </div>
-              <div class="visit-workflow-step__copy">
-                <h3 class="visit-workflow-step__title">
+                  <div class="visit-workflow-step__heading-text">
+                    <h3 class="visit-workflow-step__title">
                   Arrival &amp; Assessment
                 </h3>
-                <span
+                    <span
                   class="visit-workflow-step__rule"
                   aria-hidden="true"
                 ></span>
+                  </div>
+                </div>
                 <p class="visit-workflow-step__description">
                   We arrive on time, listen to the issue, and assess the area
                   with care.
@@ -15104,7 +15232,7 @@
               <figure class="visit-workflow-step__media">
                 <img
                   class="visit-workflow-step__image"
-                  src="assets/visit-arrival-assessment.png"
+                  src="assets/visit-arrival-assessment.webp"
                   alt="Drain technician arriving at a Vancouver property with professional drain cleaning equipment"
                   width="1916"
                   height="821"
@@ -15117,7 +15245,9 @@
             <article
               class="visit-workflow-step visit-workflow-step--inspection visit-workflow-reveal"
             >
-              <div class="visit-workflow-step__marker" aria-hidden="true">
+              <div class="visit-workflow-step__copy">
+                <div class="visit-workflow-step__heading">
+                  <div class="visit-workflow-step__marker" aria-hidden="true">
                 <svg
                   viewBox="0 0 48 48"
                   fill="none"
@@ -15132,12 +15262,14 @@
                   <circle cx="35" cy="19" r="1"></circle>
                 </svg>
               </div>
-              <div class="visit-workflow-step__copy">
-                <h3 class="visit-workflow-step__title">Inspect The System</h3>
-                <span
+                  <div class="visit-workflow-step__heading-text">
+                    <h3 class="visit-workflow-step__title">Inspect The System</h3>
+                    <span
                   class="visit-workflow-step__rule"
                   aria-hidden="true"
                 ></span>
+                  </div>
+                </div>
                 <p class="visit-workflow-step__description">
                   We run a high-resolution camera inspection to pinpoint the
                   exact cause and location.
@@ -15146,7 +15278,7 @@
               <figure class="visit-workflow-step__media">
                 <img
                   class="visit-workflow-step__image"
-                  src="assets/visit-system-inspection.png"
+                  src="assets/visit-system-inspection.webp"
                   alt="Drain technician reviewing a high-resolution pipe camera inspection monitor"
                   width="1916"
                   height="821"
@@ -15159,7 +15291,9 @@
             <article
               class="visit-workflow-step visit-workflow-step--repair visit-workflow-reveal"
             >
-              <div class="visit-workflow-step__marker" aria-hidden="true">
+              <div class="visit-workflow-step__copy">
+                <div class="visit-workflow-step__heading">
+                  <div class="visit-workflow-step__marker" aria-hidden="true">
                 <svg
                   viewBox="0 0 48 48"
                   fill="none"
@@ -15173,12 +15307,14 @@
                   ></path>
                 </svg>
               </div>
-              <div class="visit-workflow-step__copy">
-                <h3 class="visit-workflow-step__title">Carry Out The Repair</h3>
-                <span
+                  <div class="visit-workflow-step__heading-text">
+                    <h3 class="visit-workflow-step__title">Carry Out The Repair</h3>
+                    <span
                   class="visit-workflow-step__rule"
                   aria-hidden="true"
                 ></span>
+                  </div>
+                </div>
                 <p class="visit-workflow-step__description">
                   We explain the solution and carry out the repair using quality
                   parts and proven methods.
@@ -15187,7 +15323,7 @@
               <figure class="visit-workflow-step__media">
                 <img
                   class="visit-workflow-step__image"
-                  src="assets/visit-repair-under-sink.png"
+                  src="assets/visit-repair-under-sink.webp"
                   alt="Drain technician repairing pipework underneath a kitchen sink"
                   width="1916"
                   height="821"
@@ -15200,7 +15336,9 @@
             <article
               class="visit-workflow-step visit-workflow-step--flow visit-workflow-reveal"
             >
-              <div class="visit-workflow-step__marker" aria-hidden="true">
+              <div class="visit-workflow-step__copy">
+                <div class="visit-workflow-step__heading">
+                  <div class="visit-workflow-step__marker" aria-hidden="true">
                 <svg
                   viewBox="0 0 48 48"
                   fill="none"
@@ -15220,12 +15358,14 @@
                   ></path>
                 </svg>
               </div>
-              <div class="visit-workflow-step__copy">
-                <h3 class="visit-workflow-step__title">Restore Flow</h3>
-                <span
+                  <div class="visit-workflow-step__heading-text">
+                    <h3 class="visit-workflow-step__title">Restore Flow</h3>
+                    <span
                   class="visit-workflow-step__rule"
                   aria-hidden="true"
                 ></span>
+                  </div>
+                </div>
                 <p class="visit-workflow-step__description">
                   We test everything, restore full flow, and leave your space
                   clean and tidy.
@@ -15234,7 +15374,7 @@
               <figure class="visit-workflow-step__media">
                 <img
                   class="visit-workflow-step__image"
-                  src="assets/visit-restored-drain-flow.png"
+                  src="assets/visit-restored-drain-flow.webp"
                   alt="Clean stainless-steel sink drain with water flowing freely after service"
                   width="1916"
                   height="821"
