@@ -1457,9 +1457,9 @@
         align-items: center;
         gap: 0.55em;
         background: var(--fgold);
-        color: #08111f;
+        color: #08111f !important;
         border-radius: 999px;
-        font-weight: 800;
+        font-weight: 800 !important;
         font-size: clamp(13px, 1vw, 16px);
         padding: 0.8em 1.6em;
         min-height: 44px;
@@ -8246,7 +8246,7 @@
       .gpe-shared .faq .stillQuestions span:last-child { color: #4a5768; }
 
       .gpe-shared .faq .stillQuestions i,
-      .gpe-shared .faq .stillQuestions svg { color: #0a63b8; }
+      .gpe-shared .faq .stillQuestions svg { color: #E6AF1C !important; }
 
       @media (max-width: 900px) {
         /* stacked, the photo sits above the copy and fades downward */
@@ -9519,9 +9519,9 @@
       /* ---- head -------------------------------------------------------------- */
       .rn-what__head {
         display: grid;
-        grid-template-columns: minmax(0, 1fr) auto;
+        grid-template-columns: minmax(0, 1fr);
         align-items: start;
-        gap: clamp(24px, 3vw, 48px);
+        gap: 0;
       }
 
       .rn-what__eyebrow {
@@ -9697,13 +9697,13 @@
         gap: 14px;
         min-height: 54px;
         padding: 0 30px;
-        border: 1px solid #061a35;
+        border: 1px solid #004b8e;
         border-radius: 8px;
-        background: #fff;
-        color: #061a35;
+        background: #004b8e;
+        color: #fff !important;
         font: inherit;
         font-size: 15px;
-        font-weight: 700;
+        font-weight: 800 !important;
         letter-spacing: .015em;
         line-height: 1;
         white-space: nowrap;
@@ -9711,16 +9711,17 @@
         transition: transform .22s ease, background-color .22s ease, color .22s ease, box-shadow .22s ease;
       }
 
-      .rn-what__cta svg { width: 20px; height: 20px; flex: none; color: #E6AF1C; transition: transform .22s ease; }
+      .rn-what__cta svg { width: 20px; height: 20px; flex: none; color: #fff; transition: transform .22s ease; }
 
       .rn-what__cta:active { transform: translateY(0) scale(.985); }
 
       @media (hover: hover) and (pointer: fine) {
         .rn-what__cta:hover {
           transform: translateY(-2px);
-          background: #061a35;
-          color: #fff;
-          box-shadow: 0 14px 30px rgba(6, 19, 31, .26);
+          background: #003b72;
+          border-color: #003b72;
+          color: #fff !important;
+          box-shadow: 0 14px 30px rgba(0, 75, 142, .28);
         }
         .rn-what__cta:hover svg { transform: translateX(3px); }
       }
@@ -10697,7 +10698,7 @@
         color: #09101a;
         font: inherit;
         font-size: 15px;
-        font-weight: 800;
+        font-weight: 800 !important;
         letter-spacing: .06em;
         line-height: 1;
         text-transform: uppercase;
@@ -11747,15 +11748,6 @@
                 </p>
               </div>
 
-              <img
-                class="rn-what__mark"
-                src="https://res.cloudinary.com/dt8aspppl/image/upload/v1786813761/goldstein-plumbing/logo-mark-2x.dc37f6a3.webp"
-                alt="Goldstein Plumbing &amp; Gas"
-                width="830"
-                height="600"
-                loading="lazy"
-                decoding="async"
-              />
             </div>
 
             <ul class="rn-what__grid">

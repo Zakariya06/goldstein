@@ -1457,9 +1457,9 @@
         align-items: center;
         gap: 0.55em;
         background: var(--fgold);
-        color: #08111f;
+        color: #08111f !important;
         border-radius: 999px;
-        font-weight: 800;
+        font-weight: 800 !important;
         font-size: clamp(13px, 1vw, 16px);
         padding: 0.8em 1.6em;
         min-height: 44px;
@@ -5093,10 +5093,10 @@
         align-items: center;
         gap: 9px;
         padding: 0 24px;
-        color: #08111f;
+        color: #08111f !important;
         border-radius: 999px;
         background: var(--gold-light);
-        font-weight: 800;
+        font-weight: 800 !important;
       }
       .gpe-shared .gpf__grid {
         display: grid;
@@ -10211,7 +10211,7 @@
         gap: var(--hwt-btn-gap);
         border-radius: 999px;
         font-size: var(--hwt-btn-fs);
-        font-weight: 700;
+        font-weight: 800 !important;
         letter-spacing: .015em;
         text-transform: uppercase;
         line-height: 1;
@@ -11099,7 +11099,7 @@
         border: 1px solid var(--hwt-gold, #f9a401);
         background: linear-gradient(90deg, #ffb208, #ffbd19);
         box-shadow: 0 10px 28px rgba(249, 164, 1, .21);
-        color: #09101a;
+        color: #09101a !important;
         text-decoration: none;
         transition: transform .22s ease, box-shadow .22s ease;
       }
@@ -11383,8 +11383,8 @@
          53%, so the copy column has to sit inside that, not inside the full
          section width. */
       .hwt-final {
-        min-height: 100vh;
-        min-height: 100svh;
+        min-height: clamp(560px, 72vh, 680px);
+        min-height: clamp(560px, 72svh, 680px);
       }
 
       .hwt-final__inner {
@@ -11549,7 +11549,8 @@
       .gpe-shared .faq .stillQuestions span:last-child { color: #4a5768; }
 
       .gpe-shared .faq .stillQuestions i,
-      .gpe-shared .faq .stillQuestions svg { color: #0a63b8; }
+      .gpe-shared .faq .stillQuestions .iconCircle,
+      .gpe-shared .faq .stillQuestions svg { color: #E6AF1C !important; }
 
       /* the reveal system fades content up from transparent; on a light band
          the resting state must not inherit the dark band's text colour */

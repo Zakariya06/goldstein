@@ -1792,7 +1792,7 @@
         aspect-ratio: 1334 / 1179;
         z-index: -3;
         pointer-events: none;
-        background: url("assets/drain-problems-technician.webp") left bottom /
+        background: url("assets/drain-repair-serious-problems-technician.webp") left bottom /
           contain no-repeat;
         -webkit-mask-image:
           linear-gradient(
@@ -13445,7 +13445,121 @@
       }
     </style>
 
-  </head>
+  
+
+    <style id="drain-repair-client-fixes">
+      /* Requested image filenames are referenced from /assets as WEBP files. */
+
+      /* Constant CTA treatment: rounded + strongly bold. */
+      #page-content .hero-action {
+        border-radius: 999px !important;
+      }
+
+      #page-content .hero-action__title {
+        font-weight: 800 !important;
+      }
+
+      #page-content .drain-problems-section__schedule-button {
+        border-radius: 999px !important;
+        font-weight: 800 !important;
+      }
+
+      /* Constant FAQ fix: phone/call icon must be yellow. */
+      .gpe-shared .stillQuestions .iconCircle.blueCircle,
+      .gpe-shared .stillQuestions .iconCircle.blueCircle svg {
+        color: #E6AF1C !important;
+      }
+
+      .gpe-shared .stillQuestions .iconCircle.blueCircle {
+        border-color: rgba(230, 175, 28, .72) !important;
+      }
+
+      /* Constant footer CTA fix. */
+      .gpf__btn,
+      .gpe-shared .gpf__btn {
+        color: #08111F !important;
+        border-radius: 999px !important;
+        font-weight: 800 !important;
+      }
+    </style>
+
+  
+  <style id="drain-repair-visual-fixes-v2">
+    /* Serious Drain Problems: use the supplied WEBP across the full section. */
+    #page-content .drain-problems-section__background {
+      inset: 0 !important;
+      width: 100% !important;
+      max-width: none !important;
+      height: 100% !important;
+      aspect-ratio: auto !important;
+      background-image: url("assets/drain-repair-serious-problems-technician.webp") !important;
+      background-position: center center !important;
+      background-size: cover !important;
+      background-repeat: no-repeat !important;
+      -webkit-mask-image: none !important;
+      mask-image: none !important;
+      -webkit-mask-composite: initial !important;
+      mask-composite: initial !important;
+    }
+
+    /* Soft white protection keeps headline/copy readable while the image remains full-width. */
+    #page-content .drain-problems-section__background::before {
+      content: "" !important;
+      position: absolute !important;
+      inset: 0 !important;
+      pointer-events: none !important;
+      background:
+        linear-gradient(180deg,
+          rgba(245,246,246,.98) 0%,
+          rgba(245,246,246,.92) 24%,
+          rgba(245,246,246,.58) 43%,
+          rgba(245,246,246,.12) 66%,
+          rgba(245,246,246,0) 82%),
+        linear-gradient(90deg,
+          rgba(245,246,246,.12) 0%,
+          rgba(245,246,246,.10) 52%,
+          rgba(245,246,246,.50) 72%,
+          rgba(245,246,246,.88) 100%) !important;
+    }
+
+    /* The first Crew Advantage icon was scaled 3x inline; keep it compact and lighter. */
+    #page-content .crew-advantage-card--trained .crew-advantage-card__icon {
+      width: 34px !important;
+      height: 34px !important;
+      transform: none !important;
+      margin-bottom: 12px !important;
+    }
+
+    #page-content .crew-advantage-card--trained .crew-advantage-card__icon * {
+      vector-effect: non-scaling-stroke;
+    }
+
+    @media (max-width: 980px) {
+      #page-content .drain-problems-section__background {
+        inset: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        background-position: center bottom !important;
+        background-size: cover !important;
+      }
+
+      #page-content .drain-problems-card {
+        margin-top: 0 !important;
+      }
+
+      #page-content .drain-problems-section__background::before {
+        background:
+          linear-gradient(180deg,
+            rgba(245,246,246,.98) 0%,
+            rgba(245,246,246,.90) 30%,
+            rgba(245,246,246,.55) 52%,
+            rgba(245,246,246,.18) 72%,
+            rgba(245,246,246,.08) 100%) !important;
+      }
+    }
+  </style>
+
+</head>
   <body class="gpx-over">
     <!-- ======================= HEADER / TOPBAR / NAV ======================== -->
     <!-- Goldstein shared header: top bar + desktop nav + mobile drawer -->
@@ -14078,7 +14192,7 @@
         <div class="drain-repair-hero__media" aria-hidden="true">
           <img
             class="drain-repair-hero__image"
-            src="assets/hero-drain-repair-service-fixed.webp"
+            src="assets/drain-repair-hero-technician.webp"
             alt=""
             width="1672"
             height="941"
@@ -14997,11 +15111,10 @@
     viewBox="0 0 48 48"
     fill="none"
     stroke="currentColor"
-    stroke-width="2.4"
+    stroke-width="1.6"
     stroke-linecap="round"
     stroke-linejoin="round"
-    aria-hidden="true" 
-    style="transform: scale(3);"
+    aria-hidden="true"
   >
     <circle cx="19" cy="13" r="6"></circle>
 

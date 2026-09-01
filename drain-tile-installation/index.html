@@ -996,9 +996,9 @@ body .wd-footer,
       align-items: center;
       gap: .55em;
       background: var(--fgold);
-      color: #08111F;
+      color: #08111F !important;
       border-radius: 999px;
-      font-weight: 800;
+      font-weight: 800 !important;
       font-size: clamp(13px, 1vw, 16px);
       padding: .8em 1.6em;
       min-height: 44px;
@@ -2435,27 +2435,29 @@ body .wd-footer,
     .drain-tile-installation-process__card {
       position: relative;
       min-width: 0;
-      overflow: hidden;
+      overflow: visible;
       border: 1px solid rgba(240, 178, 30, .38);
       background: #061f38;
     }
 
     .drain-tile-installation-process__number {
       position: absolute;
-      top: 8px;
+      top: 0;
       left: 50%;
-      z-index: 1;
+      z-index: 4;
       display: grid;
       width: 40px;
       height: 40px;
       place-items: center;
+      border: 3px solid #061426;
       border-radius: 50%;
       background: #f0b21e;
       color: #071d3a;
       font-family: "Poppins", "Segoe UI", sans-serif;
       font-size: 17px;
       font-weight: 800;
-      transform: translateX(-50%);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, .28);
+      transform: translate(-50%, -50%);
     }
 
     .drain-tile-installation-process__image {
@@ -2467,8 +2469,11 @@ body .wd-footer,
     }
 
     .drain-tile-installation-process__card-body {
+      position: relative;
+      z-index: 2;
       min-height: 132px;
       padding: 14px 14px 16px;
+      background: #061f38;
     }
 
     .drain-tile-installation-process__card-title {
@@ -5039,7 +5044,7 @@ body .wd-footer,
       }
 
       #page-content .drain-tile-installation-process__card:hover .drain-tile-installation-process__number {
-        transform: translateX(-50%) scale(1.08);
+        transform: translate(-50%, -50%) scale(1.08);
         background: #ffb318;
         box-shadow: 0 8px 22px rgba(249,164,1,.3);
       }

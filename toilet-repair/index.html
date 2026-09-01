@@ -1457,7 +1457,7 @@
         align-items: center;
         gap: 0.55em;
         background: var(--fgold);
-        color: #08111f;
+        color: #08111f !important;
         border-radius: 999px;
         font-weight: 800;
         font-size: clamp(13px, 1vw, 16px);
@@ -2648,7 +2648,7 @@
       }
       .gpe-shared .blueCircle {
         color: #36a7ff;
-        border-color: #0877de;
+        border-color: #e6af1c;
         background: #002a61;
       }
       .gpe-shared .process {
@@ -5093,7 +5093,7 @@
         align-items: center;
         gap: 9px;
         padding: 0 24px;
-        color: #08111f;
+        color: #08111f !important;
         border-radius: 999px;
         background: var(--gold-light);
         font-weight: 800;
@@ -8246,7 +8246,7 @@
       .gpe-shared .faq .stillQuestions span:last-child { color: #4a5768; }
 
       .gpe-shared .faq .stillQuestions i,
-      .gpe-shared .faq .stillQuestions svg { color: #0a63b8; }
+      .gpe-shared .faq .stillQuestions svg { color: #e6af1c; }
 
       @media (max-width: 900px) {
         /* stacked, the photo sits above the copy and fades downward */
@@ -10575,8 +10575,9 @@
         position: relative;
         isolation: isolate;
         overflow: hidden;
-        min-height: 100vh;
-        min-height: 100svh;
+        /* Keep this CTA band intentionally shorter than a full viewport. */
+        min-height: clamp(620px, 72vh, 760px);
+        min-height: clamp(620px, 72svh, 760px);
         background: #001327;
         color: #fff;
         font-family: "Poppins", Arial, sans-serif;
@@ -10678,7 +10679,9 @@
         text-transform: uppercase;
       }
 
-      .tr-close h2 span { display: block; color: #f9a401; }
+      .tr-close h2 span { 
+        /* display: block; */
+         color: #f9a401; }
 
       .tr-close__lead {
         max-width: 40ch;
@@ -10697,16 +10700,16 @@
         margin-top: clamp(28px, 3vw, 40px);
         padding: 0 32px;
         border: 1px solid var(--tr-gold, #f9a401);
-        border-radius: 6px;
+        border-radius: 999px;
         background: linear-gradient(90deg, #ffb208, #ffbd19);
         box-shadow: 0 12px 30px rgba(249, 164, 1, .24);
         color: #09101a;
         font: inherit;
         font-size: 15px;
-        font-weight: 700;
+        font-weight: 800 !important;
         letter-spacing: .06em;
         line-height: 1;
-        text-transform: uppercase;
+        text-transform: capitalize;
         white-space: nowrap;
         cursor: pointer;
         transition: transform .22s ease, box-shadow .22s ease;
@@ -12196,7 +12199,7 @@
               <p class="tr-close__eyebrow">Toilet repair Vancouver</p>
 
               <h2 id="toilet-final-cta-title">
-                A working washroom again<br />
+                A working washroom again
                 <span>before the day ends.</span>
               </h2>
 
