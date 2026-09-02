@@ -10936,7 +10936,7 @@
             <ul class="gp-nav__sub">
               <li>
                 <a
-                  href="../commercial-plumbing/index.html.html"
+                  href="../commercial-plumbing/index.html"
                 >
                   Commercial Plumbing
                 </a>
@@ -11002,7 +11002,7 @@
               </li>
               <li>
                 <a
-                  href="../toilet-repair/index.html"
+                  href="../faucet-installation/index.html"
                 >
                   Toilets, Faucets &amp; Sinks
                 </a>
@@ -11048,14 +11048,14 @@
               </li>
               <li>
                 <a
-                  href="../installation/index.html"
+                  href="../hot-water-tank/index.html"
                 >
                   Furnace Installation
                 </a>
               </li>
               <li>
                 <a
-                  href="../installation/index.html"
+                  href="../hot-water-tank/index.html"
                 >
                   Furnace Repairs
                 </a>
@@ -11204,7 +11204,7 @@
           </a>
           <a
             class="gp-drawer__sub"
-            href="../commercial-plumbing/index.html.html"
+            href="../commercial-plumbing/index.html"
           >
             Commercial Plumbing
           </a>
@@ -11264,7 +11264,7 @@
           </a>
           <a
             class="gp-drawer__sub"
-            href="../toilet-repair/index.html"
+            href="../faucet-installation/index.html"
           >
             Toilets, Faucets &amp; Sinks
           </a>
@@ -11294,13 +11294,13 @@
           </a>
           <a
             class="gp-drawer__sub"
-            href="../installation/index.html"
+            href="../hot-water-tank/index.html"
           >
             Furnace Installation
           </a>
           <a
             class="gp-drawer__sub"
-            href="../installation/index.html"
+            href="../hot-water-tank/index.html"
           >
             Furnace Repairs
           </a>
@@ -13342,7 +13342,7 @@
               </li>
               <li>
                 <a
-                  href="../commercial-plumbing/index.html.html"
+                  href="../commercial-plumbing/index.html"
                 >
                   Commercial Plumbing
                 </a>
@@ -13361,14 +13361,14 @@
               </li>
               <li>
                 <a
-                  href="../installation/index.html"
+                  href="../hot-water-tank/index.html"
                 >
                   Furnace Installation
                 </a>
               </li>
               <li>
                 <a
-                  href="../installation/index.html"
+                  href="../hot-water-tank/index.html"
                 >
                   Furnace Repairs
                 </a>
@@ -13457,7 +13457,7 @@
               </li>
               <li>
                 <a
-                  href="../toilet-repair/index.html"
+                  href="../faucet-installation/index.html"
                 >
                   Toilets, Faucets &amp; Sinks
                 </a>
@@ -13530,16 +13530,25 @@
             a.classList.remove("is-active");
             a.removeAttribute("aria-current");
           });
-          links.forEach(function (a) {
-            if (pathOf(a.href) !== current) return;
-            a.classList.add("is-active");
-            a.setAttribute("aria-current", "page");
-            var group = a.closest(".gp-nav__has");
-            if (group) {
-              var parent = group.querySelector(":scope > .gp-nav__top");
-              if (parent) parent.classList.add("is-active");
+                    function markFirst(selector) {
+            var list = root.querySelectorAll(selector);
+            for (var i = 0; i < list.length; i++) {
+              var a = list[i];
+              if (pathOf(a.href) !== current) continue;
+              a.classList.add("is-active");
+              a.setAttribute("aria-current", "page");
+              var group = a.closest(".gp-nav__has");
+              if (group) {
+                var parent = group.querySelector(":scope > .gp-nav__top");
+                if (parent && parent !== a) parent.classList.add("is-active");
+              }
+              return;
             }
-          });
+          }
+          // One highlight per surface: the first menu entry resolving to this
+          // page wins; duplicate aliases of the same URL stay unlit.
+          markFirst(".gp-nav__top, .gp-nav__sub a");
+          markFirst(".gp-drawer__link, .gp-drawer__sub");
         })();
 
         // Mobile drawer. The original page already used hidden/ARIA; this also keeps the burger animation state in sync.
